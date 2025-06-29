@@ -20,7 +20,7 @@ const FoodItem = ({ image, name, description, price, id, category }) => {
             return;
         }
     
-        const url = "https://foodsapi-fpxr.onrender.com";
+        const url = "http://localhost:5001/add";
         const payload = { 
             id, 
             name, 
