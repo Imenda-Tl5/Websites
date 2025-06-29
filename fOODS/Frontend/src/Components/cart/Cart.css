@@ -1,0 +1,199 @@
+.cart{
+    padding: 20px 10px;
+    display: flex;
+}
+.cart-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.cart-content .item{
+    padding: 12px;
+}
+.container{
+flex-basis: 70%;
+}
+.total{
+    flex-basis: 20%;
+}
+.item{
+    display: flex;
+gap: 7px;
+align-items: flex-start;
+padding: 20px;
+}
+
+.item h3{
+    font-size: 12px;
+}
+.item p{
+    font-size: 15px;
+    margin-top: 7px;
+}
+.item img{
+    height: 70px;
+    width: 70px;
+    border-radius: 8px;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+  
+  .total{
+    max-width: 400px;
+    padding: 40px;
+    background-color: rgba(137, 43, 226, 0.151);
+    margin-right: 0;
+    margin-left: 20px;
+    padding-top: 0;
+    padding-right: 40px;
+  }
+  .total h3{
+    font-weight: 900;
+    display: flex;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    font-size: 21px;
+    padding: 30px;
+    width: 150%;
+    padding-left: 41px;
+    margin-left: -43px;
+  }
+  .total button{
+    padding: 20px;
+    background-color: blueviolet;
+    border: none;
+    color: white;
+    font-size: 18px;
+   width: 220px;
+   transition: .5s;
+}
+.total button:hover{
+    background-color: white;
+    border: 2px solid blueviolet;
+    color: rgba(137, 43, 226, 0.685);
+    cursor: pointer;
+}
+  .total p{
+    margin: 8px;
+    font-size: 19px;
+    text-transform: capitalize;
+    margin-bottom: 12px;
+    color: rgba(0, 0, 0, 0.699);
+  }
+
+  @media (max-width:900px) {
+    .cart{
+        flex-direction: column;
+    }
+    .total{
+        width: 97%;
+        max-width: 100vw;
+ 
+    }
+    .container{
+        width: 100%;
+    }
+  }
+  @media (max-width:474px) {
+    .item img{
+        width: 40px;
+        height: 40px;
+    }
+    table th{
+        font-size: 12px;
+    }
+  }
+
+  .payment{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.445);
+    top: 60px;
+    left: 0;
+  }
+  .payment div{
+
+    background-color: white;
+padding: 20px;
+}
+.payment h3{
+    font-size: 19px;
+}
+.payment .StripeElement{
+    width: 270px;
+    background-color: rgba(128, 128, 128, 0.062);
+    margin-bottom: 12px;
+}
+.payment input{
+    border: none;
+    background-color: rgba(128, 128, 128, 0.062);
+    padding: 20px;
+    font-size: 19px;
+}
+.payment div{
+    display: flex;
+    flex-direction: column;
+}
+.payment button{
+    width: 300px;
+}
+td button{
+  padding: 0px 10px ;
+  background-color: blueviolet;
+  color: white;
+  margin: 8px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 19px;
+}
+
+.head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.head button{
+  width: 80px;
+  background-color: transparent;
+  color: blueviolet;
+  font-size: 29px;
+  font-weight: 700;
+
+
+}
+.head button:hover{
+  border: none;
+  color: red;
+}

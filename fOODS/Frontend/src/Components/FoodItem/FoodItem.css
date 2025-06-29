@@ -1,0 +1,51 @@
+.food-item{
+  box-shadow: 3px 3px 10px grey;
+  border-radius: 12px 12px 0 0;
+}
+.food-item .details {
+  padding: 10px;
+}
+.food-item .details .top{
+  display: flex;
+  justify-content: space-between;
+}
+.food-item .bottom{
+
+  display: flex;
+  justify-content: space-between;
+  gap: 3px;
+  background-color: purple;
+  width: 80%;
+  align-items: center;
+  color: #faf5fa;
+  padding: 9px;
+  border-radius: 30px;
+  
+}
+.bottom span{
+  font-size: 21px;
+}
+.bottom h4{
+  display: flex;
+}
+.bottom button{
+  width: 35px;
+  height: 35px;
+  font-size: 25px;
+  cursor: pointer;
+  background-color: #fafafa;
+  color: purple;
+  border: none;
+  outline: none;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.food-item  img{
+  width: 100%;
+  object-fit: contain;
+  border-radius: 12px 12px 0 0;
+}

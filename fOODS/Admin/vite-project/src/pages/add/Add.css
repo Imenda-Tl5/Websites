@@ -1,0 +1,57 @@
+.add{
+    width: 70%;
+margin-left: max(5vw,25px);
+margin-top: 50px;
+color: #6d6d6d;
+font-size: 16px;
+}
+
+
+.add form{
+    gap: 20px;
+
+}
+
+.add-image-upload{
+    width: 120px;
+
+}
+.add-product-name, .add-product-description textarea{
+    width: max(70%,370px);
+}
+
+
+.add-product-name input, .add-product-description textarea{
+    padding: 10px;
+}
+
+
+.add-category-price{
+display: flex;
+gap: 30px;
+}
+.add-category p{
+margin-bottom: 10px;
+}
+.add-category  select{
+    background-color: white;
+    border: 1px solid grey;
+    padding: 10px;
+    font-size: 14px;
+} 
+.add-category-price select, .add-category-price  input{
+max-width: 120px;
+padding:10px ;
+}
+
+.add-button{
+    max-width: 120px;
+    border: none;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.add-image-upload label img{
+    cursor: pointer;
+}
