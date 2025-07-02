@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5001;
 
 // Connect to DB
 connectToDB();
-
+// https://foodsapi-fpxr.onrender.com   Backend url
 // Middleware to parse JSON requests
 app.use(express.json());
 app.use(cors({

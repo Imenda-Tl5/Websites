@@ -171,7 +171,7 @@ const Cart = () => {
 
         {checkout && (
           <div className="payment">
-            <div>
+            <div className='payment-container'>
               <span className="head">
 
                 <h1>Debit/ Credit</h1>
@@ -183,8 +183,9 @@ const Cart = () => {
                 <input type="text" placeholder="City" className="address" />
               </div>
 
-              <Elements stripe={stripePromise}>
-                <CardElement />
+              <Elements  stripe={stripePromise}>
+                <CardElement  className="card"/>
+                
               </Elements>
 
               {error && <p className="error-message">{error}</p>}

@@ -30,7 +30,7 @@ const Display = ({ category, setCategory }) => {
   return (
     <div className="display">
       {food_list.map((item, index) => {
-        if (item.category === category || category === "All") {
+        if (item.category === category) {
           return (
             <FoodItem
               key={index}
@@ -44,7 +44,20 @@ const Display = ({ category, setCategory }) => {
               addToCart={() => addToCart(item)}
             />
           );
-        }
+        }else if(category =="All")
+      return(
+        <FoodItem
+              key={index}
+              setCategory={setCategory}
+              name={item.name}
+              id={item._id}
+              category={item.category}
+              price={item.price}
+              image={item.image}
+              count={cart[item._id]?.count || 0} // Pass current count to FoodItem
+              addToCart={() => addToCart(item)}
+            />
+      )
       })}
     </div>
   );

@@ -20,7 +20,7 @@ const FoodItem = ({ image, name, description, price, id, category }) => {
             return;
         }
     
-        const url = "http://localhost:5001/add";
+        const url = "";
         const payload = { 
             id, 
             name, 

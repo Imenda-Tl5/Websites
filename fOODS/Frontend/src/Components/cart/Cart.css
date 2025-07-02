@@ -121,6 +121,16 @@ tr:hover {
         width: 100%;
     }
   }
+  @media (max-width:840px) {
+
+    td img{
+      transform: scale(.9);
+    }
+    td h3{
+      font-size: 12px;
+      margin-top: 8px;
+    }
+  }
   @media (max-width:474px) {
     .item img{
         width: 40px;
@@ -132,20 +142,34 @@ tr:hover {
   }
 
   .payment{
-    position: fixed;
+    position:fixed;
     height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(128, 128, 128, 0.445);
-    top: 60px;
+    top: 0;
     left: 0;
   }
-  .payment div{
+  .payment .payment-container {
 
     background-color: white;
 padding: 20px;
+z-index: 200;
+}
+.payment-container div{
+ width: 100%;
+}
+
+.payment .payment-container .card{
+ margin: 12px;
+ margin-left: 4px;
+ display: flex;
+ padding: 13px 0px;
+}
+.payment input{
+  margin-bottom: 12px
 }
 .payment h3{
     font-size: 19px;

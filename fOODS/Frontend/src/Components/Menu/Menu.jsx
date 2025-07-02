@@ -4,6 +4,9 @@ import { menu_list } from '../../assets/assets'
 const Menu = ({category,setCategory}) => {  
   return (
     <div className='menu'>
+      <button  onClick={()=>setCategory("All")} >
+        All Foods
+      </button>
          <div className="categories">
          {menu_list.map((item,index)=>{
           return(

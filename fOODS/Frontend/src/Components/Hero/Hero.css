@@ -51,11 +51,24 @@ margin-left: 50px;
         margin-left: 10px;
     }   
 }
-@media (max-width:670px) {
+@media (max-width:678px) {
     .company-info img{
         transform: scale(.8);
         margin-left: -60px;
         padding-right: 60px;
+        margin-top: -53px;
+    }
+    .company-info h1{
+        font-size: 30px;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        margin-left: -23px;
+
+    }
+    .company-info h3,span h3{
+        width: 100%;
+        font-size: 17px;
+        margin-left: -23px;
     }
 }
 @media (max-width:520px) {
