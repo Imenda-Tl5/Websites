@@ -91,7 +91,7 @@ padding-right: 1px;
     .menu svg{
         display: block;
     }
-    .logo p{
+    .logo {
         display: none;
     }
     .menu{
