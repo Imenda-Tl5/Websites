@@ -1,0 +1,9 @@
+POST  http://localhost:5001/add
+Content-Type: application/json
+
+{
+   "name":"Naruto",
+   "count":13,
+   "category":"Ninja",
+   "price":23
+}
