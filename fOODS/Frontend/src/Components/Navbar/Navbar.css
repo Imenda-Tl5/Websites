@@ -77,6 +77,13 @@ transform: scale(.9);
 .nav .cart-btn svg{
     transition: .5s;
 }
+
+.cart-btn.active svg {
+
+    background-color: blue;
+    fill: white;
+}
+
 .nav .cart-btn svg:hover{
     transition: .5s;
     background-color: blueviolet;
@@ -106,23 +113,23 @@ margin-top: 4px;
 .nav .side-menu{
     display: none;
 }
-.nav-links li:hover, Link:hover{
+ .Link:hover{
   background-color: blueviolet;
   color: white;
   border-radius: 12px;
   padding: 5px 10px;
 }
-.nav-links Link:hover{
+
+.nav-links  li {
+    display: none;
+}
+ .Link.in-view{
     background-color: blueviolet;
-    color: white;
     border-radius: 12px;
     padding: 5px 10px;
 
-}
-.nav-links  .link.link-active{
-    display: none;
-}
 
+}
 
 
 
