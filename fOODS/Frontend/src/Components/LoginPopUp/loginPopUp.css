@@ -20,6 +20,7 @@ z-index: 1000;
   align-items: center;
   padding:  30px;
   border-radius: 12px;
+  z-index:1000;
 }
 
 .header .log-in-head{
