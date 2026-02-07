@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Typing Effect - Single Element</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #0d1117;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      color: #c9d1d9;
+    }
+
+    .typing-container {
+      font-size: 2.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 4px solid #58a6ff; /* blinking cursor */
+      width: 0;                        /* starts at 0 width */
+      animation: 
+        typing 3.5s steps(38) forwards,  /* adjust steps to match character count */
+        blink-cursor 0.7s step-end infinite;
+    }
+
+    /* Typing animation */
+    @keyframes typing {
+      from { width: 0 }
+      to   { width: 100% }   /* or you can use: calc-character-count * 1ch */
+    }
+
+    /* Blinking cursor */
+    @keyframes blink-cursor {
+      from, to   { border-color: transparent }
+      50%        { border-color: #58a6ff }
+    }
+
+    /* Optional: cursor stops blinking after typing is done */
+    .typing-done {
+      border-right: none;
+      animation: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="typing-container" id="typingText">
+    Hi, I'm Imenda — Full Stack Developer from Zambia
+  </div>
+
+  <script>
+    // Optional: Stop blinking cursor after animation finishes
+    const textElement = document.getElementById('typingText');
+    
+    textElement.addEventListener('animationend', (e) => {
+      if (e.animationName === 'typing') {
+        textElement.classList.add('typing-done');
+      }
+    });
+  </script>
+
+</body>
+</html>
