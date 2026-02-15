@@ -1,69 +1,402 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Typing Effect - Single Element</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #0d1117;
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      color: #c9d1d9;
-    }
-
-    .typing-container {
-      font-size: 2.8rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 4px solid #58a6ff; /* blinking cursor */
-      width: 0;                        /* starts at 0 width */
-      animation: 
-        typing 3.5s steps(38) forwards,  /* adjust steps to match character count */
-        blink-cursor 0.7s step-end infinite;
-    }
-
-    /* Typing animation */
-    @keyframes typing {
-      from { width: 0 }
-      to   { width: 100% }   /* or you can use: calc-character-count * 1ch */
-    }
-
-    /* Blinking cursor */
-    @keyframes blink-cursor {
-      from, to   { border-color: transparent }
-      50%        { border-color: #58a6ff }
-    }
-
-    /* Optional: cursor stops blinking after typing is done */
-    .typing-done {
-      border-right: none;
-      animation: none;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="typing-container" id="typingText">
-    Hi, I'm Imenda — Full Stack Developer from Zambia
-  </div>
-
-  <script>
-    // Optional: Stop blinking cursor after animation finishes
-    const textElement = document.getElementById('typingText');
-    
-    textElement.addEventListener('animationend', (e) => {
-      if (e.animationName === 'typing') {
-        textElement.classList.add('typing-done');
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello Princess</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Parisienne&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Tikazi.css" />
+    <style>
+      /* Popup styles */
+      .popup {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(13, 17, 23, 0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(88, 166, 255, 0.4);
+        border-radius: 16px;
+        padding: 2rem 2.5rem;
+        color: #e6edf3;
+        font-size: 1.2rem;
+        max-width: 90%;
+        width: 480px;
+        text-align: center;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+        z-index: 1000;
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+        text-align: left;
+        text-transform: capitalize;
       }
-    });
-  </script>
 
-</body>
+      .popup.show {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        pointer-events: auto;
+      }
+
+      .popup.hide {
+        opacity: 0;
+        transform: translate(-50%, -48%) scale(0.96);
+        pointer-events: none;
+      }
+
+      .popup p {
+        margin: 0 0 1.2rem 0;
+        line-height: 1.5;
+      }
+
+      .popup .close-btn {
+        background: rgba(88, 166, 255, 0.25);
+        border: none;
+        color: #58a6ff;
+        padding: 8px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.2s;
+      }
+
+      .popup .close-btn:hover {
+        background: #58a6ff;
+        color: white;
+      }
+    </style>
+  </head>
+  <body id="body">
+    <div>
+
+    <div class="loader">
+      <span></span><span></span><span></span> <span></span><span></span
+      ><span></span>
+    </div>
+    <button class="menu">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 -960 960 960"
+        width="24px"
+        fill="#1f1f1f"
+      >
+        <path
+          d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+        />
+      </svg>
+    </button>
+    <nav>
+      <button class="close">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="40px"
+          viewBox="0 -960 960 960"
+          width="40px"
+          fill="#1f1f1f"
+        >
+          <path
+            d="m251.33-204.67-46.66-46.66L433.33-480 204.67-708.67l46.66-46.66L480-526.67l228.67-228.66 46.66 46.66L526.67-480l228.66 228.67-46.66 46.66L480-433.33 251.33-204.67Z"
+          />
+        </svg>
+      </button>
+      <ul>
+        <li>
+          <a
+            href="../MYGILRFRIEND/portfolio-template/index.html"
+          >
+            Home
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="black"
+            >
+              <path
+                d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"
+              />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="./portfolio-template/about-me.html">
+          blog
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#1f1f1f"
+          >
+            <path
+              d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h440l200 200v440q0 33-23.5 56.5T760-120H200Zm0-80h560v-400H600v-160H200v560Zm80-80h400v-80H280v80Zm0-320h200v-80H280v80Zm0 160h400v-80H280v80Zm-80-320v160-160 560-560Z"
+            />
+          </svg>
+          </a>
+        </li>
+        <li>
+          <a href="./portfolio-template/project1.html">
+          Arts
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#1f1f1f"
+          >
+            <path
+              d="M240-120q-45 0-89-22t-71-58q26 0 53-20.5t27-59.5q0-50 35-85t85-35q50 0 85 35t35 85q0 66-47 113t-113 47Zm0-80q33 0 56.5-23.5T320-280q0-17-11.5-28.5T280-320q-17 0-28.5 11.5T240-280q0 23-5.5 42T220-202q5 2 10 2h10Zm230-160L360-470l358-358q11-11 27.5-11.5T774-828l54 54q12 12 12 28t-12 28L470-360Zm-190 80Z"
+            />
+          </svg>
+          </a>
+
+        </li>
+        <li>
+          <a href="./portfolio-template/portfolio.html">
+          Portfolio
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#1f1f1f"
+          >
+            <path
+              d="M160-120q-33 0-56.5-23.5T80-200v-440q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v440q0 33-23.5 56.5T800-120H160Zm0-80h640v-440H160v440Zm240-520h160v-80H400v80ZM160-200v-440 440Z"
+            />
+          </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="typing-container" id="typingText">
+      <div class="text">
+        <h1></h1>
+        <p></p>
+        <button id="next"> next</button>
+
+      </div>
+
+    </div>
+
+    <!-- The popup -->
+    <div class="popup" id="introPopup">
+      <p>
+        So this is a this is a website idea I've been working on for quite a bit
+        of time now. the general purpose is that i'ts meant to hold some of the
+        best things about you that you've worked on like a public record on how
+        cool Tika is 😎
+        <br />
+        Oh and as porfolio incase you need to pitch yourself off to some big
+        company or something.<br /><br />
+        <strong> But as for now… it has a slightly different use today.</strong>
+
+      </p>
+      <button class="close-btn" id="closePopup">Continue →</button>
+    </div>
+
+    <div class="evnelope-wrapper">
+      <div id="evnelope" class="close">
+        <div class="front flap"></div>
+        <div class="front pocket"></div>
+
+        <div class="letter"><div class="words line1">
+    Okay so I know I'm really really really late in doing this,  
+    but in my defence I was somewhat confused on when or how to do this.  
+    Better late than never right.
+</div>
+
+<div class="words line2">
+    So Valentine's Day is a holiday of romance.  
+    Romance is love in an active state — ignited and inspired.  
+    I'll admit Valentine's Day once felt like a holiday forced on me  
+    by the card, jewelry, and floral industries.  
+    But I've come to accept the importance and purpose of the day —  
+    which is to show love to the one I cherish.
+</div>
+
+<div class="words line3">
+    Like the body fighting off the universe's entropy and death,  
+    Valentine's Day is an opportunity to ignite our love,  
+    to inject romance into an everlasting relationship.  
+    Because with romance in our envolved even the ordinary moments become sparks that keep us burning bright,  
+    refusing to let time ,distance or routine slowly dim what we have.  
+    So here's my late, but very real, reminder:  
+    I choose you today, tomorrow, and every day after —  
+    with all the romance, intention, and fire I can give.  
+    Happy belated Valentine's princess. 
+</div>
+
+<div class="word line4">
+    <div class="reset">
+        <button id="close2">Close</button>
+    </div>
+</div></div>
+
+        <div class="hearts">
+          <div class="heart a1"></div>
+          <div class="heart a2"></div>
+          <div class="heart a3"></div>
+        </div>
+      </div>
+    </div>
+    <div class="reset">
+      <button id="open">Open</button>
+      <button id="close">Close</button>
+    </div>
+    </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const envelope = document.getElementById("evnelope");
+        const btnOpen = document.getElementById("open");
+        const btnReset = document.getElementById("close");
+        const btnReset2 = document.getElementById("close2");
+
+        function openEnvelope() {
+          envelope.classList.add("open");
+          envelope.classList.remove("close");
+        }
+
+        function closeEnvelope() {
+          envelope.classList.add("close");
+          envelope.classList.remove("open");
+        }
+
+        btnOpen.addEventListener("click", openEnvelope);
+        btnReset.addEventListener("click", closeEnvelope);
+        btnReset2.addEventListener("click", closeEnvelope);
+      });
+      // ────────────────────────────────────────────────
+      // Typing function
+      // ────────────────────────────────────────────────
+      function typeText(element, text, i = 0, callback) {
+        if (i === 0) {
+          element.textContent = "";
+        }
+        element.textContent += text[i];
+        if (i === text.length - 1) {
+          if (callback) callback();
+          return;
+        }
+        setTimeout(() => typeText(element, text, i + 1, callback), 60);
+      }
+
+      // ────────────────────────────────────────────────
+      // Elements
+      // ────────────────────────────────────────────────
+      const titleElement = document.querySelector(".text h1");
+      const bodyEl = document.getElementById("body");
+      const envelope = document.getElementById("envelope");
+      const openBtn = document.getElementById("open");
+      const closeBtn = document.getElementById("close");
+      const nextBtn = document.getElementById("next");
+      const loader = document.querySelector(".loader");
+      const popup = document.getElementById("introPopup");
+      const closePopupBtn = document.getElementById("closePopup");
+
+      // New nav elements
+      const menuBtn = document.querySelector(".menu");
+      const navCloseBtn = document.querySelector("nav .close");
+      const nav = document.querySelector("nav");
+
+      const titleText = "Hello Princess";
+      const bodyText =
+        "First of all I'll have to start with an apology, I know I can be a bit dumb at times and I get that that can be very irritating at times.\n\nWith that said I do hope you keep in mind that I love you a lot, that I love you so much that I always try to be better. I feel like I'm not really good enough for you but I'll try my very best to make you happy for as long as I live.\n\nI love you a lot Tikazi Kamanga ❤️";
+
+      // Start typing title
+      typeText(titleElement, titleText, 0, () => {
+        setTimeout(() => {
+          popup.classList.add("show");
+        }, 800);
+      });
+
+      // Close popup → start typing main message
+      function startMainMessage() {
+        popup.classList.remove("show");
+        popup.classList.add("hide");
+        setTimeout(() => {
+          popup.style.display = "none";
+          const textDiv = document.querySelector(".text");
+          const bodyNode = document.createTextNode("");
+          textDiv.appendChild(bodyNode);
+          typeText(bodyNode, bodyText);
+        }, 600);
+      }
+
+      closePopupBtn.addEventListener("click", startMainMessage);
+      popup.addEventListener("click", (e) => {
+        if (e.target === popup || e.target.tagName === "P") {
+          startMainMessage();
+        }
+      });
+
+      // Envelope controls
+      openBtn.addEventListener("click", () => {
+        envelope.classList.remove("close");
+        envelope.classList.add("open");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        envelope.classList.remove("open");
+        envelope.classList.add("close");
+      });
+
+      // Next button → loader → love mode
+      nextBtn.addEventListener("click", () => {
+        loader.style.display = "flex";
+        document.querySelector(".typing-container").style.display = "none";
+        document.querySelector(" #next").style.display = "none";
+        setTimeout(() => {
+          loader.style.display = "none";
+          bodyEl.classList.add("love");
+        }, 5000);
+      });
+
+      // ────────────────────────────────────────────────
+      // NEW: Navigation open/close
+      // ────────────────────────────────────────────────
+      menuBtn.addEventListener("click", () => {
+        nav.classList.add("active");
+      });
+
+      navCloseBtn.addEventListener("click", () => {
+        nav.classList.remove("active");
+      });
+
+      // Optional: close nav when clicking a menu item (good UX)
+      document.querySelectorAll("nav ul li").forEach((item) => {
+        item.addEventListener("click", () => {
+          nav.classList.remove("active");
+        });
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        const envelope = document.getElementById("evnelope");
+        const btnOpen = document.getElementById("open");
+        const btnReset = document.getElementById("close");
+        const btnReset2 = document.getElementById("close2");
+
+        function openEnvelope() {
+          envelope.classList.add("open");
+          envelope.classList.remove("close");
+        }
+
+        function closeEnvelope() {
+          envelope.classList.add("close");
+          envelope.classList.remove("open");
+        }
+
+        btnOpen.addEventListener("click", openEnvelope);
+        btnReset.addEventListener("click", closeEnvelope);
+        btnReset2.addEventListener("click", closeEnvelope);
+      });
+    </script>
+  </body>
 </html>

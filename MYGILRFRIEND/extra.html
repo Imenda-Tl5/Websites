@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./extra.css">
+</head>
+<body>
+    
+
+    
+    
+
+    <script >
+        document.addEventListener("DOMContentLoaded", function(){
+    const envelope = document.getElementById("evnelope");
+    const btnOpen = document.getElementById("open");
+    const btnReset = document.getElementById("close");
+    const btnReset2 = document.getElementById("close2");
+
+    function openEnvelope(){
+        envelope.classList.add("open");
+        envelope.classList.remove("close");
+    }
+
+    function closeEnvelope(){
+        envelope.classList.add("close");
+        envelope.classList.remove("open");
+    }
+
+    btnOpen.addEventListener("click", openEnvelope);
+    btnReset.addEventListener("click", closeEnvelope);
+    btnReset2.addEventListener("click", closeEnvelope);
+});
+    </script>
+</body>
+</html>
